@@ -9,4 +9,8 @@ public class EntityData : ScriptableObject
 
     [field: Space()]
     [field: SerializeField] public int Damage { get; private set;  }
+
+    [field: Space()]
+    [field: SerializeField] public bool IsAttacking { get; private set; }
+    [field: SerializeField] public Rigidbody2D Body { get; set; }
 }
