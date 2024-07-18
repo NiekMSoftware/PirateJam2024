@@ -16,3 +16,9 @@ MonoBehaviour:
   <Health>k__BackingField: 100
   <MaxHealth>k__BackingField: 100
   <Damage>k__BackingField: 10
+  <BaseSpeed>k__BackingField: 15
+  <CurrentSpeed>k__BackingField: 0
+  <MaxSpeed>k__BackingField: 15
+  <Acceleration>k__BackingField: 0.5
+  <IsAttacking>k__BackingField: 0
+  <Body>k__BackingField: {fileID: 0}
