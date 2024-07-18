@@ -4,8 +4,10 @@ public class MouseController : MonoBehaviour
 {
     public Camera Camera;
     public LayerMask TargetLayer;
+    public float dragForce = 10f;
+
     private Rigidbody2D selectedRb;
-    private Vector3 offset;
+    private Vector3 grabPointOffset;
 
     private void Update()
     {
@@ -17,7 +19,11 @@ public class MouseController : MonoBehaviour
                 selectedRb = hit.collider.attachedRigidbody;
                 if (selectedRb != null)
                 {
-                    offset = selectedRb.transform.position - Camera.ScreenToViewportPoint(Input.mousePosition);
+                    Vector3 grabPoint = Camera.ScreenToWorldPoint(Input.mousePosition);
+                    grabPointOffset = selectedRb.transform.InverseTransformPoint(grabPoint);
+
+                    // Ensure the rigidbody is at interpolate
+                    selectedRb.interpolation = RigidbodyInterpolation2D.Interpolate;
                 }
             }
         }
@@ -34,13 +40,13 @@ public class MouseController : MonoBehaviour
         {
             Vector3 mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
             Vector2 targetPosition = new Vector2(mousePosition.x, mousePosition.y);
-            Vector2 currentPosition = selectedRb.position;
-            Vector2 direction = (targetPosition - currentPosition).normalized;
-            float distance = Vector2.Distance(currentPosition, targetPosition);
+            Vector2 grabWorldPoint = selectedRb.transform.TransformPoint(grabPointOffset);
 
-            // Adjust force based on the distance to the target position
-            float force = Mathf.Clamp(distance * 10, 0, 100);
-            selectedRb.velocity = direction * force;
+            // Calculate the force direction
+            Vector2 forceDirection = targetPosition - grabWorldPoint;
+
+            // Apply force to the grabbed point
+            selectedRb.AddForceAtPosition(forceDirection * dragForce, grabWorldPoint);
         }
     }
 }
