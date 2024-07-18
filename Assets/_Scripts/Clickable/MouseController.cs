@@ -5,6 +5,7 @@ public class MouseController : MonoBehaviour
     public Camera Camera;
     public LayerMask TargetLayer;
     public float dragForce = 10f;
+    public float damping = 1f;
 
     private Rigidbody2D selectedRb;
     private Vector3 grabPointOffset;
@@ -30,6 +31,7 @@ public class MouseController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            selectedRb.velocity = Vector2.zero;
             selectedRb = null;
         }
     }
@@ -44,9 +46,13 @@ public class MouseController : MonoBehaviour
 
             // Calculate the force direction
             Vector2 forceDirection = targetPosition - grabWorldPoint;
+            Vector2 force = forceDirection * dragForce;
 
-            // Apply force to the grabbed point
-            selectedRb.AddForceAtPosition(forceDirection * dragForce, grabWorldPoint);
+            // Apply damping to reduce excessive motion
+            force -= selectedRb.velocity * damping;
+
+            // Apply force to rigidbody
+            selectedRb.AddForceAtPosition(force, grabWorldPoint);
         }
     }
 }
