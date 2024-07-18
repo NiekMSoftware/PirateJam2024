@@ -170,7 +170,8 @@ MonoBehaviour:
   TargetLayer:
     serializedVersion: 2
     m_Bits: 64
-  dragForce: 1
+  dragForce: 40
+  damping: 25
 --- !u!1 &1218472286
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +346,7 @@ GameObject:
   - component: {fileID: 1256422111}
   - component: {fileID: 1256422114}
   - component: {fileID: 1256422113}
+  - component: {fileID: 1256422115}
   m_Layer: 6
   m_Name: Clickable Object
   m_TagString: Untagged
@@ -491,6 +493,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1256422115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256422110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e241a53895719147809635967778a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 10914, guid: 0000000000000000f000000000000000, type: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
