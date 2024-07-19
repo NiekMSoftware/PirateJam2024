@@ -11,7 +11,7 @@ namespace PirateJam.Inventory
     }
 
     [CreateAssetMenu]
-    public class EquipableItem : Item
+    public class EquippableItem : Item
     {
         public int StrengthBonus;
         public int SpeedBonus;

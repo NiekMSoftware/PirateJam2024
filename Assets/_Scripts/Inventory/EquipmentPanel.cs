@@ -14,13 +14,13 @@ namespace PirateJam.Inventory
             equipmentSlots = GetComponentsInChildren<EquipmentSlot>();
         }
 
-        public bool AddItem(EquipableItem item, out EquipableItem previousItem)
+        public bool AddItem(EquippableItem item, out EquippableItem previousItem)
         {
             for (int i = 0; i < equipmentSlots.Length; i++)
             {
                 if (equipmentSlots[i].EquipmentType == item.EquipmentType)
                 {
-                    previousItem = (EquipableItem)equipmentSlots[i].Item;
+                    previousItem = (EquippableItem)equipmentSlots[i].Item;
                     equipmentSlots[i].Item = item;
                     return true;
                 }
@@ -30,8 +30,13 @@ namespace PirateJam.Inventory
             return false;
         }
 
-        public bool RemoveItem(EquipableItem item)
+        public bool RemoveItem(EquippableItem item)
         {
+            if (item == null) {
+                Debug.LogError("No item to remove.");
+                return false; 
+            }
+
             for (int i = 0; i < equipmentSlots.Length; i++)
             {
                 if (equipmentSlots[i].Item == item)

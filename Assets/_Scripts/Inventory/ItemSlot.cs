@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
 
 namespace PirateJam.Inventory
 {
-    public class ItemSlot : MonoBehaviour
+    public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private Image image;
+
+        public event Action<Item> OnRightClickEvent;
 
         private Item item;
         public Item Item
@@ -21,6 +25,15 @@ namespace PirateJam.Inventory
                     image.sprite = item.Icon;
                     image.enabled = true;
                 }
+            }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
+            {
+                if (item != null && OnRightClickEvent != null)
+                    OnRightClickEvent(Item);
             }
         }
 

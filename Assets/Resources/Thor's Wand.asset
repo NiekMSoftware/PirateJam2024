@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47312125213710e458528accadb7dae6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ee36aff8c386444b92e94b7d0f55bcf, type: 3}
   m_Name: Thor's Wand
   m_EditorClassIdentifier: 
-  Icon: {fileID: 1245699420, guid: 9693d80d64ec9414e8de5cc75a49ef49, type: 3}
+  Icon: {fileID: 21300000, guid: fadce02d3be57d04eb437b78960ba7f3, type: 3}
   ItemName: Thor's Wand
-  StrengthBonus: 10
+  StrengthBonus: 15
   SpeedBonus: 5
-  StrengthPercentBonus: 25
-  SpeedPercentBonus: 20
+  StrengthPercentBonus: 20
+  SpeedPercentBonus: 40
   EquipmentType: 0

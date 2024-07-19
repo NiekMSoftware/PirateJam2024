@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,16 @@ namespace PirateJam.Inventory
         [SerializeField] private List<Item> items;
         [SerializeField] private Transform itemsParent;
         [SerializeField] private ItemSlot[] itemSlots;
+
+        public event Action<Item> OnItemRightClickedEvent;
+
+        private void Awake()
+        {
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+            }
+        }
 
         private void OnValidate()
         {
