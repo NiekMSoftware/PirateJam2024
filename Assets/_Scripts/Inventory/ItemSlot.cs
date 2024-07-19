@@ -24,7 +24,7 @@ namespace PirateJam.Inventory
             }
         }
 
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             if (image == null)
                 image = GetComponent<Image>();
