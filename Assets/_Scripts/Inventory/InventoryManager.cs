@@ -12,9 +12,9 @@ namespace PirateJam.Inventory
             if (inventory.RemoveItem(item))
             {
                 EquipableItem previousItem;
-                if (equipmentPanel.AddItem(item, out previousItem)) 
+                if (equipmentPanel.AddItem(item, out previousItem))
                 {
-                    if (previousItem != null) 
+                    if (previousItem != null)
                     {
                         inventory.AddItem(previousItem);
                     }
@@ -23,6 +23,14 @@ namespace PirateJam.Inventory
                 {
                     inventory.AddItem(item);
                 }
+            }
+        }
+
+        public void Unequip(EquipableItem item)
+        {
+            if (!inventory.IsFull() && equipmentPanel.RemoveItem(item)) 
+            {
+                inventory.AddItem(item);
             }
         }
     }
