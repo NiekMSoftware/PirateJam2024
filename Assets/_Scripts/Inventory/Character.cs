@@ -1,14 +1,24 @@
 using UnityEngine;
+using PirateJam.CharacterStats;
 
 namespace PirateJam.Inventory
 {
     public class Character : MonoBehaviour
     {
+        public CharacterStat Strength;
+        public CharacterStat Agility;
+        public CharacterStat Vitality;
+
+        [Space]
         [SerializeField] private Inventory inventory;
         [SerializeField] private EquipmentPanel equipmentPanel;
+        [SerializeField] private StatPanel statPanel;
 
         private void Awake()
         {
+            statPanel.SetStats(Strength, Agility, Vitality);
+            statPanel.UpdateStatValues();
+
             inventory.OnItemRightClickedEvent += EquipFromInventory;
             equipmentPanel.OnItemRightClickedEvent += UnequipFromPanel;
         }
@@ -38,7 +48,12 @@ namespace PirateJam.Inventory
                     if (previousItem != null)
                     {
                         inventory.AddItem(previousItem);
+                        previousItem.Unequip(this);
+                        statPanel.UpdateStatValues();
                     }
+
+                    item.Equip(this);
+                    statPanel.UpdateStatValues();
                 }
                 else
                 {
@@ -51,6 +66,9 @@ namespace PirateJam.Inventory
         {
             if (!inventory.IsFull() && equipmentPanel.RemoveItem(item)) 
             {
+                item.Unequip(this);
+                statPanel.UpdateStatValues();
+
                 inventory.AddItem(item);
             }
         }
