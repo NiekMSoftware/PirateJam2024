@@ -2,9 +2,9 @@ namespace PirateJam.CharacterStats
 {
     public enum StatModifierType
     {
-        Flat,
-        PercentAdd,
-        PercentMult
+        Flat = 100,
+        PercentAdd = 200,
+        PercentMult = 300
     }
 
     public class StatModifier

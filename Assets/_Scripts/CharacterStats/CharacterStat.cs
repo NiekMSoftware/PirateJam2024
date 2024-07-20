@@ -1,15 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace PirateJam.CharacterStats
 {
     public class CharacterStat
     {
         public float BaseValue;
+
         public float Value {
             get {
-                if (isDirty)
+                if (isDirty || BaseValue != lastBaseValue)
                 {
+                    lastBaseValue = BaseValue;
                     _value = CalculateFinalValue();
                     isDirty = false;
                 }
@@ -20,13 +23,16 @@ namespace PirateJam.CharacterStats
 
         private bool isDirty = true;
         private float _value;
+        private float lastBaseValue = float.MinValue;
 
         private readonly List<StatModifier> statModifiers;
+        public readonly ReadOnlyCollection<StatModifier> StatModifiers;
 
         public CharacterStat(float baseValue)
         {
             BaseValue = baseValue;
             statModifiers = new List<StatModifier>();
+            StatModifiers = statModifiers.AsReadOnly();
         }
 
         public void AddModifier(StatModifier modifier) 
@@ -48,8 +54,30 @@ namespace PirateJam.CharacterStats
 
         public bool RemoveModifier(StatModifier modifier)
         {
-            isDirty = true;
-            return statModifiers.Remove(modifier);
+            if (statModifiers.Remove(modifier))
+            {
+                isDirty = true;
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool RemoveAllModifiersFromSource(object source)
+        {
+            bool didRemove = false;
+
+            for (int i = statModifiers.Count - 1; i >= 0; i--)
+            {
+                if (statModifiers[i].Source == source)
+                {
+                    isDirty = true;
+                    didRemove = true;
+                    statModifiers.RemoveAt(i);
+                }
+            }
+
+            return didRemove;
         }
 
         private float CalculateFinalValue()
