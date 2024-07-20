@@ -7,6 +7,19 @@ namespace PirateJam.Inventory
         [SerializeField] private Inventory inventory;
         [SerializeField] private EquipmentPanel equipmentPanel;
 
+        private void Awake()
+        {
+            inventory.OnItemRightClickedEvent += EquipFromInventory;
+        }
+
+        private void EquipFromInventory(Item item)
+        {
+            if (item is EquipableItem)
+            {
+                Equip((EquipableItem)item);
+            }
+        }
+
         public void Equip(EquipableItem item)
         {
             if (inventory.RemoveItem(item))
