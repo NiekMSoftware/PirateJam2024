@@ -47,7 +47,16 @@ namespace PirateJam.CharacterStats
 
             for (int i = 0; i < statModifiers.Count; i++) 
             {
-                finalValue += statModifiers[i].Value;
+                StatModifier mod = statModifiers[i];
+
+                if (mod.Type == StatModifierType.Flat)
+                { 
+                    finalValue += mod.Value; 
+                }
+                else if (mod.Type == StatModifierType.Percent)
+                {
+                    finalValue *= 1 + mod.Value;    //< if base is 10, and increase is 10% then the final value will be 11 (10 * 1.1).
+                }
             }
 
             // 12.0001f != 12f
