@@ -10,11 +10,15 @@ namespace PirateJam.CharacterStats
     {
         public readonly float Value;
         public readonly StatModifierType Type;
+        public readonly int Order;
 
-        public StatModifier(float value, StatModifierType type)
+        public StatModifier(float value, StatModifierType type, int order)
         {
             Value = value;
             Type = type;
+            Order = order;
         }
+
+        public StatModifier(float value, StatModifierType type) : this(value, type, (int)type) { }
     }
 }

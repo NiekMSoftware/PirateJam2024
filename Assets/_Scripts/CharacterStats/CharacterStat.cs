@@ -33,6 +33,17 @@ namespace PirateJam.CharacterStats
         { 
             isDirty = true;
             statModifiers.Add(modifier);
+            statModifiers.Sort(CompareModifierOrder);
+        }
+
+        private int CompareModifierOrder(StatModifier a, StatModifier b) 
+        {
+            if (a.Order < b.Order)
+                return -1;
+            else if (a.Order > b.Order)
+                return 1;
+
+            return 0; // if (a.Order == b.Order)
         }
 
         public bool RemoveModifier(StatModifier modifier)
