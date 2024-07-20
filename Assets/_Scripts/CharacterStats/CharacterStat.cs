@@ -4,11 +4,12 @@ using System.Collections.ObjectModel;
 
 namespace PirateJam.CharacterStats
 {
+    [Serializable]
     public class CharacterStat
     {
         public float BaseValue;
 
-        public float Value {
+        public virtual float Value {
             get {
                 if (isDirty || BaseValue != lastBaseValue)
                 {
@@ -21,28 +22,32 @@ namespace PirateJam.CharacterStats
             }
         }
 
-        private bool isDirty = true;
-        private float _value;
-        private float lastBaseValue = float.MinValue;
+        protected bool isDirty = true;
+        protected float _value;
+        protected float lastBaseValue = float.MinValue;
 
-        private readonly List<StatModifier> statModifiers;
+        protected readonly List<StatModifier> statModifiers;
         public readonly ReadOnlyCollection<StatModifier> StatModifiers;
 
-        public CharacterStat(float baseValue)
+        public CharacterStat()
         {
-            BaseValue = baseValue;
             statModifiers = new List<StatModifier>();
             StatModifiers = statModifiers.AsReadOnly();
         }
 
-        public void AddModifier(StatModifier modifier) 
+        public CharacterStat(float baseValue) : this()
+        {
+            BaseValue = baseValue;
+        }
+
+        public virtual void AddModifier(StatModifier modifier) 
         { 
             isDirty = true;
             statModifiers.Add(modifier);
             statModifiers.Sort(CompareModifierOrder);
         }
 
-        private int CompareModifierOrder(StatModifier a, StatModifier b) 
+        protected virtual int CompareModifierOrder(StatModifier a, StatModifier b) 
         {
             if (a.Order < b.Order)
                 return -1;
@@ -52,7 +57,7 @@ namespace PirateJam.CharacterStats
             return 0; // if (a.Order == b.Order)
         }
 
-        public bool RemoveModifier(StatModifier modifier)
+        public virtual bool RemoveModifier(StatModifier modifier)
         {
             if (statModifiers.Remove(modifier))
             {
@@ -63,7 +68,7 @@ namespace PirateJam.CharacterStats
             return false;
         }
 
-        public bool RemoveAllModifiersFromSource(object source)
+        public virtual bool RemoveAllModifiersFromSource(object source)
         {
             bool didRemove = false;
 
@@ -80,7 +85,7 @@ namespace PirateJam.CharacterStats
             return didRemove;
         }
 
-        private float CalculateFinalValue()
+        protected virtual float CalculateFinalValue()
         {
             float finalValue = BaseValue;
             float sumPercentAdd = 0;
