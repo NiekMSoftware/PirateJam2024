@@ -55,6 +55,7 @@ namespace PirateJam.CharacterStats
         private float CalculateFinalValue()
         {
             float finalValue = BaseValue;
+            float sumPercentAdd = 0;
 
             for (int i = 0; i < statModifiers.Count; i++) 
             {
@@ -64,7 +65,17 @@ namespace PirateJam.CharacterStats
                 { 
                     finalValue += mod.Value; 
                 }
-                else if (mod.Type == StatModifierType.Percent)
+                else if (mod.Type == StatModifierType.PercentAdd)
+                {
+                    sumPercentAdd += mod.Value;
+
+                    if (i + 1 > statModifiers.Count || statModifiers[i + 1].Type != StatModifierType.PercentAdd)
+                    {
+                        finalValue *= 1 + sumPercentAdd;
+                        sumPercentAdd = 0f;
+                    }
+                }
+                else if (mod.Type == StatModifierType.PercentMult)
                 {
                     finalValue *= 1 + mod.Value;    //< if base is 10, and increase is 10% then the final value will be 11 (10 * 1.1).
                 }
