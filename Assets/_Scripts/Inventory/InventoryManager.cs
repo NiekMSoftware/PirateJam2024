@@ -10,6 +10,7 @@ namespace PirateJam.Inventory
         private void Awake()
         {
             inventory.OnItemRightClickedEvent += EquipFromInventory;
+            equipmentPanel.OnItemRightClickedEvent += UnequipFromPanel;
         }
 
         private void EquipFromInventory(Item item)
@@ -17,6 +18,13 @@ namespace PirateJam.Inventory
             if (item is EquipableItem)
             {
                 Equip((EquipableItem)item);
+            }
+        }
+
+        private void UnequipFromPanel(Item item)
+        {
+            if (item is EquipableItem) { 
+                Unequip((EquipableItem)item);
             }
         }
 
