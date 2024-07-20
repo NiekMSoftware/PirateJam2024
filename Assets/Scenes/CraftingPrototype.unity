@@ -953,6 +953,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 80bd9abbb38442445a05e13f47ebfa15, type: 2}
   - {fileID: 11400000, guid: 80bd9abbb38442445a05e13f47ebfa15, type: 2}
   - {fileID: 11400000, guid: 80bd9abbb38442445a05e13f47ebfa15, type: 2}
+  - {fileID: 11400000, guid: 05a5cac3e029e65438f751b04bb0c7e3, type: 2}
   itemsParent: {fileID: 144158635}
   itemSlots:
   - {fileID: 476858471}
@@ -1005,7 +1006,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151632194}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
