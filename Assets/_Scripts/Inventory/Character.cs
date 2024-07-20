@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace PirateJam.Inventory
 {
-    public class InventoryManager : MonoBehaviour
+    public class Character : MonoBehaviour
     {
         [SerializeField] private Inventory inventory;
         [SerializeField] private EquipmentPanel equipmentPanel;
