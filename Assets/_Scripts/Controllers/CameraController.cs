@@ -54,7 +54,7 @@ public class CameraController : MonoBehaviour
 
     private void CameraToMouse()
     {
-        // moves camera to rotationPoint
+        // moves rotationPoint
         mousePos = myCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 rotation = mousePos - rotationPoint.transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
