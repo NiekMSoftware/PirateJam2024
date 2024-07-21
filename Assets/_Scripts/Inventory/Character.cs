@@ -18,7 +18,6 @@ namespace PirateJam.Inventory
         {
             statPanel.SetStats(Strength, Agility, Vitality);
             statPanel.UpdateStatValues();
-
             inventory.OnItemRightClickedEvent += EquipFromInventory;
             equipmentPanel.OnItemRightClickedEvent += UnequipFromPanel;
         }

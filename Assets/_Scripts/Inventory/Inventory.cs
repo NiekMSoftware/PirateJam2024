@@ -14,9 +14,23 @@ namespace PirateJam.Inventory
 
         private void Awake()
         {
-            for (int i = 0; i < itemSlots.Length; i++)
+            if (itemsParent != null)
+                itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
+
+            if (itemSlots != null)
             {
-                itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+                for (int i = 0; i < itemSlots.Length; i++)
+                {
+                    Debug.Log("Assigning OnRightClickEvent to item slot " + i);
+                    if (OnItemRightClickedEvent != null)
+                        itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+                    else
+                        Debug.LogError("OnItemRightClickedEvent is null during assignment.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Item slots not assigned.");
             }
         }
 

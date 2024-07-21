@@ -28,13 +28,33 @@ namespace PirateJam.Inventory
             }
         }
 
+        void Start()
+        {
+            if (FindObjectOfType<EventSystem>() == null)
+            {
+                GameObject eventSystem = new GameObject("EventSystem");
+                eventSystem.AddComponent<EventSystem>();
+                eventSystem.AddComponent<StandaloneInputModule>();
+            }
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
+            Debug.Log("Pointer Click Detected");
             if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
             {
-                if (Item != null && OnRightClickEvent != null) 
+                Debug.Log("Right Button click detected.");
+                if (Item != null && OnRightClickEvent != null)
                 {
                     OnRightClickEvent(Item);
+                    Debug.Log("Event invoked.");
+                }
+                else
+                {
+                    if (Item == null)
+                        Debug.LogError("Item is null.");
+                    if (OnRightClickEvent == null)
+                        Debug.LogError("OnRightClickEvent is null.");
                 }
             }
         }
