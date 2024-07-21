@@ -40,14 +40,11 @@ namespace PirateJam.Inventory
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log("Pointer Click Detected");
             if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
             {
-                Debug.Log("Right Button click detected.");
                 if (Item != null && OnRightClickEvent != null)
                 {
                     OnRightClickEvent(Item);
-                    Debug.Log("Event invoked.");
                 }
                 else
                 {

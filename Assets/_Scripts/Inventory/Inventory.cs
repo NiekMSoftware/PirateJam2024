@@ -21,7 +21,6 @@ namespace PirateJam.Inventory
             {
                 for (int i = 0; i < itemSlots.Length; i++)
                 {
-                    Debug.Log("Assigning OnRightClickEvent to item slot " + i);
                     if (OnItemRightClickedEvent != null)
                         itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
                     else
