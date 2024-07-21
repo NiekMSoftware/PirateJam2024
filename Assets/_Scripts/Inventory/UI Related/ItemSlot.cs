@@ -2,57 +2,38 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 namespace PirateJam.Inventory.UI_Related
 {
-    public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+    public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
     {
         [SerializeField] private Image image;
-        [SerializeField] private ItemTooltip tooltip;
 
-        public event Action<Item> OnRightClickEvent;
+        public event Action<ItemSlot> OnPointerEnterEvent;
+        public event Action<ItemSlot> OnPointerExitEvent;
+        public event Action<ItemSlot> OnRightClickEvent;
+        public event Action<ItemSlot> OnBeginDragEvent;
+        public event Action<ItemSlot> OnEndDragEvent;
+        public event Action<ItemSlot> OnDragEvent;
+        public event Action<ItemSlot> OnDropEvent;
 
-        private Item item;
+        private Color normalColor = Color.white;
+        private Color disabledColor = new(1, 1, 1, 0);
+
+        private Item _item;
         public Item Item
         {
-            get { return item; }
+            get { return _item; }
             set {
-                item = value;
+                _item = value;
 
-                if (item == null) {
-                    image.enabled = false;
+                if (_item == null) {
+                    image.color = disabledColor;
                 }
                 else {
-                    image.sprite = item.Icon;
-                    image.enabled = true;
-                }
-            }
-        }
-
-        void Start()
-        {
-            if (FindObjectOfType<EventSystem>() == null)
-            {
-                GameObject eventSystem = new GameObject("EventSystem");
-                eventSystem.AddComponent<EventSystem>();
-                eventSystem.AddComponent<StandaloneInputModule>();
-            }
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
-            {
-                if (Item != null && OnRightClickEvent != null)
-                {
-                    OnRightClickEvent(Item);
-                }
-                else
-                {
-                    if (Item == null)
-                        Debug.LogError("Item is null.");
-                    if (OnRightClickEvent == null)
-                        Debug.LogError("OnRightClickEvent is null.");
+                    image.sprite = _item.Icon;
+                    image.color = normalColor;
                 }
             }
         }
@@ -61,22 +42,51 @@ namespace PirateJam.Inventory.UI_Related
         {
             if (image == null)
                 image = GetComponent<Image>();
+        }
 
-            if (tooltip == null)
-                tooltip = FindObjectOfType<ItemTooltip>();
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
+            {
+                if (OnRightClickEvent != null)
+                    OnRightClickEvent(this);
+            }
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (Item is EquipableItem)
-            {
-                tooltip.ShowToolTip((EquipableItem)Item);
-            }
+            if (OnPointerEnterEvent != null) 
+                OnPointerEnterEvent(this);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         { 
-            tooltip?.HideToolTip();
+            if (OnPointerExitEvent != null)
+                OnPointerExitEvent(this);
+        }
+
+        void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
+        {
+            if (OnBeginDragEvent != null)
+                OnBeginDragEvent(this);
+        }
+
+        void IEndDragHandler.OnEndDrag(PointerEventData eventData)
+        {
+            if (OnEndDragEvent != null)
+                OnEndDragEvent(this);
+        }
+
+        void IDragHandler.OnDrag(PointerEventData eventData)
+        {
+            if (OnDragEvent != null)
+                OnDragEvent(this);
+        }
+
+        void IDropHandler.OnDrop(PointerEventData eventData)
+        {
+            if (OnDropEvent != null)
+                OnDropEvent(this);
         }
     }
 }
