@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1016620215	Player_Move_Start			\Default Work Unit\Player_Move_Start	
+	4275889181	Player_Move_Stop			\Default Work Unit\Player_Move_Stop	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	752917397	Footstep_Stone	D:\GameDev\GameJamJuly2024\Repository\PirateJam2024\PirateJam2024_WwiseProject\.cache\Mac\SFX\FootstepStone2_CB0A8CDD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep_Stone		54976
+

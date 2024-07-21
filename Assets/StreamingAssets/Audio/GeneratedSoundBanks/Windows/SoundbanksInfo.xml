@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../../../../../PirateJam2024_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../../PirateJam2024_WwiseProject/.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>../../../../../PirateJam2024_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{7842A9F5-231D-9242-F46B-A852A6417D12}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="1062779386" Name="Player_Speed"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{7AA10938-3742-DB26-0DEE-A685C625F2D2}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="752917397" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FootstepStone2.wav</ShortName>
+					<CachePath>SFX/FootstepStone2_54C6D584.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2453392179" Name="Player_Footstep" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.22241333" DurationMax="0.4105079">
+					<MediaRefs>
+						<MediaRef Id="752917397"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="1062779386" Name="Player_Speed"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{469574B1-1E23-FDA1-840D-3AA73657137B}</FileHash>
+</SoundBanksInfo>

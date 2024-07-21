@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9348c3f9634b4eb4fa1e121ecb035874, type: 3}
+  m_Name: ABB7C759-8EA5-4937-BD48-787DF6C89DE1
+  m_EditorClassIdentifier: 
+  objectName: Player_Move_Start
+  id: 1016620215
+  guid: ABB7C759-8EA5-4937-BD48-787DF6C89DE1
