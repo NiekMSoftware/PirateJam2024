@@ -1013,6 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 476858469}
+  tooltip: {fileID: 1161600854}
 --- !u!1 &528758024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,10 +1046,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1161600850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -32.345}
+  m_SizeDelta: {x: 410, y: 44.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528758026
 MonoBehaviour:
@@ -1332,6 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 571784283}
+  tooltip: {fileID: 1161600854}
 --- !u!1 &609131374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,6 +1899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 710253751}
+  tooltip: {fileID: 1161600854}
   EquipmentType: 2
 --- !u!1 &723386825
 GameObject:
@@ -1987,6 +1990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 723386828}
+  tooltip: {fileID: 1161600854}
   EquipmentType: 1
 --- !u!1 &741976895
 GameObject:
@@ -2211,6 +2215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 779707321}
+  tooltip: {fileID: 1161600854}
 --- !u!1 &839981051
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,10 +2322,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1161600850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -114.91501}
+  m_SizeDelta: {x: 410, y: 31.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &845089655
 MonoBehaviour:
@@ -2510,6 +2515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 848368541}
+  tooltip: {fileID: 1161600854}
   EquipmentType: 0
 --- !u!1 &906454336
 GameObject:
@@ -3107,6 +3113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1151632196}
+  tooltip: {fileID: 1161600854}
 --- !u!1 &1161600849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,7 +3133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1161600850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3148,7 +3155,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -50, y: 50}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 450, y: 280}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1161600851
 MonoBehaviour:
@@ -4156,10 +4163,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1161600850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -76.98}
+  m_SizeDelta: {x: 410, y: 24.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935480542
 MonoBehaviour:

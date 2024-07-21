@@ -50,7 +50,7 @@ namespace PirateJam.Inventory.UI_Related
 
                 if (isPercent)
                 {
-                    sb.Append(value * 100);
+                    sb.Append(value);
                     sb.Append("% ");
                 } else {
                     sb.Append(value);

@@ -5,7 +5,7 @@ namespace PirateJam.Inventory
 {
     public enum EquipmentType
     {
-        Weapon1,
+        Weapon,
         Accessory1,
         Accessory2
     }

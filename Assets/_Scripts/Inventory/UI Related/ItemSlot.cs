@@ -5,9 +5,10 @@ using UnityEngine.EventSystems;
 
 namespace PirateJam.Inventory.UI_Related
 {
-    public class ItemSlot : MonoBehaviour, IPointerClickHandler
+    public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private Image image;
+        [SerializeField] private ItemTooltip tooltip;
 
         public event Action<Item> OnRightClickEvent;
 
@@ -60,6 +61,22 @@ namespace PirateJam.Inventory.UI_Related
         {
             if (image == null)
                 image = GetComponent<Image>();
+
+            if (tooltip == null)
+                tooltip = FindObjectOfType<ItemTooltip>();
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            if (Item is EquipableItem)
+            {
+                tooltip.ShowToolTip((EquipableItem)Item);
+            }
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        { 
+            tooltip?.HideToolTip();
         }
     }
 }
