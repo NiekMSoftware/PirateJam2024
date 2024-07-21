@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6852683516721899406}
   - component: {fileID: 8433525694121913492}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2669770365888445448}
   - component: {fileID: 8359232768470001596}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spot Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7965523920397305860}
   - component: {fileID: 8714266745446181172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,8 @@ GameObject:
   - component: {fileID: 4789260370644792695}
   - component: {fileID: 5778668191745159075}
   - component: {fileID: 9161607629855706055}
-  m_Layer: 0
+  - component: {fileID: 5343013595540469954}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,3 +322,26 @@ MonoBehaviour:
   groundDecay: 0.4
   acceleration: 1
   maxSpeed: 6
+--- !u!114 &5343013595540469954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851889987704181317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210252c4cc101c7499712fd32f341d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Strength:
+    BaseValue: 10
+  Agility:
+    BaseValue: 10
+  Vitality:
+    BaseValue: 10
+  inventory: {fileID: 0}
+  equipmentPanel: {fileID: 0}
+  statPanel: {fileID: 0}
+  itemTooltip: {fileID: 0}
+  draggableItem: {fileID: 0}
