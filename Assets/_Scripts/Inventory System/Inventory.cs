@@ -102,7 +102,29 @@ namespace PirateJam.Inventory_System
 
         bool IItemContainer.ContainsItem(Item item)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                if (itemSlots[i].Item == item)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        int IItemContainer.ItemCount(Item item)
+        {
+            int number = 0;
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                if (itemSlots[i].Item == item)
+                {
+                    number++;
+                }
+            }
+
+            return number;
         }
     }
 }
