@@ -110,7 +110,7 @@ namespace PirateJam.CharacterStats
                 }
                 else if (mod.Type == StatModifierType.PercentMult)
                 {
-                    finalValue *= 1 + (mod.Value / 100);    //< if base is 10, and increase is 10% then the final value will be 11 (10 * 1.1).
+                    finalValue *= 1 + (mod.Value / 100);
                 }
             }
 
