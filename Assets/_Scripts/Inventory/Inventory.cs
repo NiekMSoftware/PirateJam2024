@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using PirateJam.Inventory.UI_Related;
+using static UnityEditor.Progress;
+using UnityEngine.Serialization;
 
 namespace PirateJam.Inventory
 {
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] private List<Item> items;
+        [FormerlySerializedAs("items"), SerializeField] private List<Item> startingItems;
         [SerializeField] private Transform itemsParent;
         [SerializeField] private ItemSlot[] itemSlots;
 
@@ -15,23 +17,12 @@ namespace PirateJam.Inventory
 
         private void Start()
         {
-            if (itemsParent != null)
-                itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+            }
 
-            if (itemSlots != null)
-            {
-                for (int i = 0; i < itemSlots.Length; i++)
-                {
-                    if (OnItemRightClickedEvent != null)
-                        itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
-                    else
-                        Debug.LogError("OnItemRightClickedEvent is null during assignment.");
-                }
-            }
-            else
-            {
-                Debug.LogError("Item slots not assigned.");
-            }
+            SetStartingItems();
         }
 
         private void OnValidate()
@@ -39,15 +30,15 @@ namespace PirateJam.Inventory
             if (itemsParent != null) 
                 itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
 
-            RefreshUI();
+            SetStartingItems();
         }
 
-        private void RefreshUI()
+        private void SetStartingItems()
         {
             int i = 0;
-            for (; i < items.Count && i < itemSlots.Length; i++)
+            for (; i < startingItems.Count && i < itemSlots.Length; i++)
             {
-                itemSlots[i].Item = items[i];
+                itemSlots[i].Item = startingItems[i];
             }
 
             for (; i < itemSlots.Length; i++)
@@ -58,19 +49,27 @@ namespace PirateJam.Inventory
 
         public bool AddItem(Item item)
         {
-            if (IsFull()) return false;
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                if (itemSlots[i].Item == null)
+                { 
+                    itemSlots[i].Item = item;
+                    return true;
+                }
+            }
 
-            items.Add(item);
-            RefreshUI();
-            return true;
+            return false;
         }
 
         public bool RemoveItem(Item item)
         {
-            if (items.Remove(item))
+            for (int i = 0; i < itemSlots.Length; i++)
             {
-                RefreshUI();
-                return true;
+                if (itemSlots[i].Item == item)
+                {
+                    itemSlots[i].Item = null;
+                    return true;
+                }
             }
 
             return false;
@@ -78,7 +77,15 @@ namespace PirateJam.Inventory
 
         public bool IsFull()
         {
-            return items.Count >= itemSlots.Length; 
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                if (itemSlots[i].Item == null)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

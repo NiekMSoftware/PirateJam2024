@@ -3550,7 +3550,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 1
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -4638,10 +4638,6 @@ PrefabInstance:
     - target: {fileID: 3646172298193022619, guid: de1118b0b4f3dc148b25649b811e6254, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 3924210340492326432, guid: de1118b0b4f3dc148b25649b811e6254, type: 3}
-      propertyPath: orthographic size
-      value: 5.625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
