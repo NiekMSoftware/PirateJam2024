@@ -44,6 +44,11 @@ namespace PirateJam.Inventory.UI_Related
                 image = GetComponent<Image>();
         }
 
+        public virtual bool CanReceiveItem(Item item)
+        {
+            return true;
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
             if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
