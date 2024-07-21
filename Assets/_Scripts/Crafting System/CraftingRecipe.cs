@@ -9,6 +9,8 @@ namespace PirateJam.Crafting_System
     public struct ItemAmount
     {
         public Item Item;
+
+        [Range(1, 999)] 
         public int Amount;
     }
 
