@@ -10,7 +10,7 @@ namespace PirateJam.Inventory.UI_Related
 
         public event Action<Item> OnItemRightClickedEvent;
 
-        private void Awake()
+        private void Start()
         {
             for (int i = 0; i < equipmentSlots.Length; i++)
             {

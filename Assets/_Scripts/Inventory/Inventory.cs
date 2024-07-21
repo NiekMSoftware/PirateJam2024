@@ -13,7 +13,7 @@ namespace PirateJam.Inventory
 
         public event Action<Item> OnItemRightClickedEvent;
 
-        private void Awake()
+        private void Start()
         {
             if (itemsParent != null)
                 itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
