@@ -1,5 +1,6 @@
 using UnityEngine;
 using PirateJam.CharacterStats;
+using PirateJam.Inventory.UI_Related;
 
 namespace PirateJam.Inventory
 {

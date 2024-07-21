@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using PirateJam.Inventory.UI_Related;
 
 namespace PirateJam.Inventory
 {

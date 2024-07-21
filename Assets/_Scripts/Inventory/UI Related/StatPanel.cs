@@ -1,7 +1,7 @@
 using PirateJam.CharacterStats;
 using UnityEngine;
 
-namespace PirateJam.Inventory
+namespace PirateJam.Inventory.UI_Related
 {
     public class StatPanel : MonoBehaviour
     {

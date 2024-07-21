@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace PirateJam.Inventory
+namespace PirateJam.Inventory.UI_Related
 {
     public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {

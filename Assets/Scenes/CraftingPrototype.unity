@@ -3119,6 +3119,7 @@ GameObject:
   - component: {fileID: 1161600851}
   - component: {fileID: 1161600852}
   - component: {fileID: 1161600853}
+  - component: {fileID: 1161600854}
   m_Layer: 5
   m_Name: Item Tooltip
   m_TagString: Untagged
@@ -3209,6 +3210,21 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1161600854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161600849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680d32b9871222f44851d9d0f29e142d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemNameText: {fileID: 528758026}
+  ItemSlotText: {fileID: 1935480542}
+  ItemStatsText: {fileID: 845089655}
 --- !u!1 &1197785664
 GameObject:
   m_ObjectHideFlags: 0

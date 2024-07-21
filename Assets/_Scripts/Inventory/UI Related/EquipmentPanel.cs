@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace PirateJam.Inventory
+namespace PirateJam.Inventory.UI_Related
 {
     public class EquipmentPanel : MonoBehaviour
     {
