@@ -52,8 +52,9 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    private void CameraToMouse() // only works on RotatePoint in scene
+    private void CameraToMouse()
     {
+        // moves camera to rotationPoint
         mousePos = myCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 rotation = mousePos - rotationPoint.transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
@@ -68,7 +69,7 @@ public class CameraController : MonoBehaviour
         myCamera.transform.position = position;
     }
 
-    private void CameraToPlayer() // only works on main camera in scene
+    private void CameraToPlayer()
     {
         float delay = speed * Time.deltaTime;
         Vector3 position = myCamera.transform.position;
