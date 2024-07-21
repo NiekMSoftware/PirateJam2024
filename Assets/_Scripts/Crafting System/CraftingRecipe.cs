@@ -24,5 +24,10 @@ namespace PirateJam.Crafting_System
         {
             return false;
         }
+
+        public void Craft(Inventory inventory)
+        {
+
+        }
     }
 }

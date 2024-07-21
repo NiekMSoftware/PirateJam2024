@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using PirateJam.Inventory_System.UI_Related;
 using UnityEngine.Serialization;
+using PirateJam.Crafting_System;
 
 namespace PirateJam.Inventory_System
 {
-    public class Inventory : MonoBehaviour
+    public class Inventory : MonoBehaviour, IItemContainer
     {
         [FormerlySerializedAs("items"), SerializeField] private List<Item> startingItems;
         [SerializeField] private Transform itemsParent;
@@ -97,6 +98,11 @@ namespace PirateJam.Inventory_System
             }
 
             return true;
+        }
+
+        bool IItemContainer.ContainsItem(Item item)
+        {
+            throw new NotImplementedException();
         }
     }
 }
