@@ -118,6 +118,8 @@ namespace PirateJam.Inventory_System
 
         private void Drop(ItemSlot dropItemSlot)
         {
+            if (dropItemSlot == null) return;
+
             if (dropItemSlot.CanReceiveItem(draggedSlot.Item) && draggedSlot.CanReceiveItem(dropItemSlot.Item))
             {
                 EquipableItem dragItem = draggedSlot.Item as EquipableItem;

@@ -29,7 +29,7 @@ namespace PirateJam.Inventory_System
             {
                 if (!isEmpty)
                 {
-                    inventory.AddItem(item);
+                    inventory.AddItem(Instantiate(item));
                     isEmpty = true;
                     spriteRenderer.color = emptyColor;
                 }
