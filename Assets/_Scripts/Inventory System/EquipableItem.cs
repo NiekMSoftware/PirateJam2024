@@ -25,6 +25,16 @@ namespace PirateJam.Inventory_System
         [Space]
         public EquipmentType EquipmentType;
 
+        public override Item GetCopy()
+        {
+            return Instantiate(this);
+        }
+
+        public override void Destroy()
+        {
+            Destroy(this);
+        }
+
         public void Equip(Character c)
         {
             // Flat bonuses

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdc5f3fb226ed341a933028fd432a25, type: 3}
+  m_Name: Gold Coin
+  m_EditorClassIdentifier: 
+  id: a93976bb4dac45a4e84d26c75396dc4f
+  Icon: {fileID: 2057780958, guid: a51b707fe08ee6b4386b6156bf4e40da, type: 3}
+  ItemName: Gold Coin
+  MaximumStacks: 69

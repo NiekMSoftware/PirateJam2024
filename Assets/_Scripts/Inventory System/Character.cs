@@ -18,7 +18,7 @@ namespace PirateJam.Inventory_System
         [SerializeField] private ItemTooltip itemTooltip;
         [SerializeField] private Image draggableItem;
 
-        private ItemSlot draggedSlot;
+        private ItemSlot dragItemSlot;
 
         private void OnValidate()
         {
@@ -97,7 +97,7 @@ namespace PirateJam.Inventory_System
         {
             if (itemSlot.Item != null)
             {
-                draggedSlot = itemSlot;
+                dragItemSlot = itemSlot;
                 draggableItem.sprite = itemSlot.Item.Icon;
                 draggableItem.transform.position = Input.mousePosition;
                 draggableItem.enabled = true;
@@ -106,7 +106,7 @@ namespace PirateJam.Inventory_System
 
         private void EndDrag(ItemSlot itemSlot)
         {
-            draggedSlot = null;
+            dragItemSlot = null;
             draggableItem.enabled = false;
         }
 
@@ -120,12 +120,12 @@ namespace PirateJam.Inventory_System
         {
             if (dropItemSlot == null) return;
 
-            if (dropItemSlot.CanReceiveItem(draggedSlot.Item) && draggedSlot.CanReceiveItem(dropItemSlot.Item))
+            if (dropItemSlot.CanReceiveItem(dragItemSlot.Item) && dragItemSlot.CanReceiveItem(dropItemSlot.Item))
             {
-                EquipableItem dragItem = draggedSlot.Item as EquipableItem;
+                EquipableItem dragItem = dragItemSlot.Item as EquipableItem;
                 EquipableItem dropItem = dropItemSlot.Item as EquipableItem;
 
-                if (draggedSlot is EquipmentSlot)
+                if (dragItemSlot is EquipmentSlot)
                 {
                     if (dragItem != null) dragItem.Unequip(this);
                     if (dropItem != null) dropItem.Equip(this);
@@ -137,9 +137,14 @@ namespace PirateJam.Inventory_System
                 }
                 statPanel.UpdateStatValues();
 
-                Item draggedItem = draggedSlot.Item;
-                draggedSlot.Item = dropItemSlot.Item;
+                Item draggedItem = dragItemSlot.Item;
+                int draggedItemAmount = dragItemSlot.Amount;
+
+                dragItemSlot.Item = dropItemSlot.Item;
+                dragItemSlot.Amount = dropItemSlot.Amount;
+
                 dropItemSlot.Item = draggedItem;
+                dropItemSlot.Amount = draggedItemAmount;
             }
         }
 

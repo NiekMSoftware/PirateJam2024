@@ -5,9 +5,14 @@ namespace PirateJam.Inventory_System
     public class ItemChest : MonoBehaviour
     {
         [SerializeField] private Item item;
+        [SerializeField] private int amount = 1;
+
+        [Space]
         [SerializeField] private Inventory inventory;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private LayerMask playerMask;
+
+        [Space]
         [SerializeField] private Color emptyColor;
         [SerializeField] private KeyCode itemPickupKeycode = KeyCode.E;
 
@@ -25,13 +30,21 @@ namespace PirateJam.Inventory_System
 
         private void Update()
         {
-            if (isInRange && Input.GetKeyDown(itemPickupKeycode))
+            if (isInRange && !isEmpty && Input.GetKeyDown(itemPickupKeycode))
             {
-                if (!isEmpty)
+                Item itemCopy = item.GetCopy();
+                if (inventory.AddItem(itemCopy))
                 {
-                    inventory.AddItem(Instantiate(item));
-                    isEmpty = true;
-                    spriteRenderer.color = emptyColor;
+                    amount--;
+                    if (amount == 0)
+                    {
+                        isEmpty = true;
+                        spriteRenderer.color = emptyColor;
+                    }
+                }
+                else
+                {
+                    itemCopy.Destroy();
                 }
             }
         }
