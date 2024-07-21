@@ -1,7 +1,7 @@
 using UnityEngine;
 using PirateJam.CharacterStats;
 
-namespace PirateJam.Inventory
+namespace PirateJam.Inventory_System
 {
     public enum EquipmentType
     {

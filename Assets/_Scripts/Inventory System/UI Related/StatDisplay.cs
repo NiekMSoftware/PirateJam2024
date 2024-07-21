@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace PirateJam.Inventory.UI_Related
+namespace PirateJam.Inventory_System.UI_Related
 {
     public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

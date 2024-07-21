@@ -1,7 +1,7 @@
-using PirateJam.Inventory;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using PirateJam.Inventory_System;
 
 namespace PirateJam.Crafting_System
 {
@@ -19,5 +19,10 @@ namespace PirateJam.Crafting_System
     {
         public List<ItemAmount> Materials;
         public List<ItemAmount> Results;
+
+        public bool CanCraft(Inventory inventory)
+        {
+            return false;
+        }
     }
 }

@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using PirateJam.Inventory.UI_Related;
-using static UnityEditor.Progress;
+using PirateJam.Inventory_System.UI_Related;
 using UnityEngine.Serialization;
 
-namespace PirateJam.Inventory
+namespace PirateJam.Inventory_System
 {
     public class Inventory : MonoBehaviour
     {

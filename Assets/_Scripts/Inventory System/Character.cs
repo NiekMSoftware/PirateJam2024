@@ -1,9 +1,9 @@
 using UnityEngine;
 using PirateJam.CharacterStats;
-using PirateJam.Inventory.UI_Related;
+using PirateJam.Inventory_System.UI_Related;
 using UnityEngine.UI;
 
-namespace PirateJam.Inventory
+namespace PirateJam.Inventory_System
 {
     public class Character : MonoBehaviour
     {

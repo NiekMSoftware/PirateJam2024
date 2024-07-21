@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PirateJam.Inventory
+namespace PirateJam.Inventory_System
 {
     public class InventoryInput : MonoBehaviour
     {
