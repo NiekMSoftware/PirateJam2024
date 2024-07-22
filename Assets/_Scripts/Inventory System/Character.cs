@@ -2,6 +2,7 @@ using UnityEngine;
 using PirateJam.CharacterStats;
 using PirateJam.Inventory_System.UI_Related;
 using UnityEngine.UI;
+using PirateJam.Crafting_System.UI_Related;
 
 namespace PirateJam.Inventory_System
 {
@@ -15,6 +16,7 @@ namespace PirateJam.Inventory_System
         [SerializeField] private Inventory inventory;
         [SerializeField] private EquipmentPanel equipmentPanel;
         [SerializeField] private StatPanel statPanel;
+        [SerializeField] private CraftingWindow craftingWindow;
         [SerializeField] private ItemTooltip itemTooltip;
         [SerializeField] private Image draggableItem;
 
@@ -39,10 +41,12 @@ namespace PirateJam.Inventory_System
             // Pointer enter
             inventory.OnPointerEnterEvent += ShowTooltip;
             equipmentPanel.OnPointerEnterEvent += ShowTooltip;
+            craftingWindow.OnPointerEnterEvent += ShowTooltip;
 
             // Pointer exit
             inventory.OnPointerExitEvent += HideTooltip;
             equipmentPanel.OnPointerExitEvent += HideTooltip;
+            craftingWindow.OnPointerExitEvent += HideTooltip;
 
             // Begin drag
             inventory.OnBeginDragEvent += BeginDrag;
