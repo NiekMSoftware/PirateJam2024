@@ -45,10 +45,13 @@ namespace PirateJam.Inventory_System.UI_Related
             set
             {
                 _amount = value;
-                amountText.enabled = _item != null && _item.MaximumStacks > 1 && _amount > 0;
-                if (amountText.enabled)
+                if (amountText != null)
                 {
-                    amountText.text = _amount.ToString();
+                    amountText.enabled = _item != null && _item.MaximumStacks > 1 && _amount > 0;
+                    if (amountText.enabled)
+                    {
+                        amountText.text = _amount.ToString();
+                    }
                 }
             }
         }

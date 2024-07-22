@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using PirateJam.Inventory_System.UI_Related;
+using PirateJam.Inventory_System;
 using UnityEngine;
 
-public class CraftingRecipeUI : MonoBehaviour
+namespace PirateJam.Crafting_System.UI_Related
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CraftingRecipeUI : MonoBehaviour
     {
-        
-    }
+        [Header("References")]
+        [SerializeField] private RectTransform arrowParent;
+        [SerializeField] private BaseItemSlot[] itemSlots;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [Header("Public Variables")]
+        public ItemContainer ItemContainer;
     }
 }
