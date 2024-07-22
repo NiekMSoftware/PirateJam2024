@@ -9240,6 +9240,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6564180723790244549, guid: 8a5af14dfe5fb6242b2f873ee5b51b77, type: 3}
+      propertyPath: craftingRecipeUis.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564180723790244549, guid: 8a5af14dfe5fb6242b2f873ee5b51b77, type: 3}
       propertyPath: CraftingRecipes.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 0dd12c1f40e63fe4e9537679b7b1d46a, type: 2}

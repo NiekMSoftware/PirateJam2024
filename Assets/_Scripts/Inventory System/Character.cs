@@ -28,7 +28,7 @@ namespace PirateJam.Inventory_System
                 itemTooltip = FindObjectOfType<ItemTooltip>();
         }
 
-        private void Awake()
+        private void Start()
         {
             statPanel.SetStats(Strength, Agility, Vitality);
             statPanel.UpdateStatValues();

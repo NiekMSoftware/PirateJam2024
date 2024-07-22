@@ -12,7 +12,7 @@ namespace PirateJam.Crafting_System.UI_Related
         [Header("References")]
         [SerializeField] private CraftingRecipeUI recipeUIPrefab;
         [SerializeField] private RectTransform recipeUIParent;
-        [SerializeField] private List<CraftingRecipeUI> craftingRecipeUIs;
+        [SerializeField] private List<CraftingRecipeUI> craftingRecipeUis;
 
         [Header("Public variables")]
         public ItemContainer ItemContainer;
@@ -30,7 +30,7 @@ namespace PirateJam.Crafting_System.UI_Related
         {
             Init();
 
-            foreach (CraftingRecipeUI craftingRecipeUI in craftingRecipeUIs)
+            foreach (CraftingRecipeUI craftingRecipeUI in craftingRecipeUis)
             {
                 craftingRecipeUI.OnPointerEnterEvent += OnPointerEnterEvent;
                 craftingRecipeUI.OnPointerExitEvent += OnPointerExitEvent;
@@ -39,7 +39,7 @@ namespace PirateJam.Crafting_System.UI_Related
 
         private void Init()
         {
-            recipeUIParent.GetComponentsInChildren<CraftingRecipeUI>(includeInactive: true, result: craftingRecipeUIs);
+            recipeUIParent.GetComponentsInChildren<CraftingRecipeUI>(includeInactive: true, result: craftingRecipeUis);
             UpdateCraftingRecipes();
         }
 
@@ -47,22 +47,22 @@ namespace PirateJam.Crafting_System.UI_Related
         {
             for (int i = 0; i < CraftingRecipes.Count; i++)
             {
-                if (craftingRecipeUIs.Count == i)
+                if (craftingRecipeUis.Count == i)
                 {
-                    craftingRecipeUIs.Add(Instantiate(recipeUIPrefab, recipeUIParent, false));
+                    craftingRecipeUis.Add(Instantiate(recipeUIPrefab, recipeUIParent, false));
                 }
-                else if (craftingRecipeUIs[i] == null)
+                else if (craftingRecipeUis[i] == null)
                 {
-                    craftingRecipeUIs[i] = Instantiate(recipeUIPrefab, recipeUIParent, false);
+                    craftingRecipeUis[i] = Instantiate(recipeUIPrefab, recipeUIParent, false);
                 }
 
-                craftingRecipeUIs[i].ItemContainer = ItemContainer;
-                craftingRecipeUIs[i].CraftingRecipe = CraftingRecipes[i];
+                craftingRecipeUis[i].ItemContainer = ItemContainer;
+                craftingRecipeUis[i].CraftingRecipe = CraftingRecipes[i];
             }
 
-            for (int i = CraftingRecipes.Count; i < craftingRecipeUIs.Count; i++)
+            for (int i = CraftingRecipes.Count; i < craftingRecipeUis.Count; i++)
             {
-                craftingRecipeUIs[i].CraftingRecipe = null;
+                craftingRecipeUis[i].CraftingRecipe = null;
             }
         }
     }
