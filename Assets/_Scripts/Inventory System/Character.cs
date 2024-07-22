@@ -124,15 +124,17 @@ namespace PirateJam.Inventory_System
         {
             if (dropItemSlot == null) return;
 
-            if (dropItemSlot.CanAddStack(dragItemSlot.Item))
+            if (dropItemSlot != null)
             {
-                print("ADDING STACKS");
-                AddStacks(dropItemSlot);
-            }
-            else if (dropItemSlot.CanReceiveItem(dragItemSlot.Item) && dragItemSlot.CanReceiveItem(dropItemSlot.Item))
-            {
-                SwapItems(dropItemSlot);
-            }
+                if (dropItemSlot.CanAddStack(dragItemSlot.Item))
+                {
+                    AddStacks(dropItemSlot);
+                }
+                else if (dropItemSlot.CanReceiveItem(dragItemSlot.Item) && dragItemSlot.CanReceiveItem(dropItemSlot.Item))
+                {
+                    SwapItems(dropItemSlot);
+                }
+            }            
         }
 
         private void SwapItems(BaseItemSlot dropItemSlot)
