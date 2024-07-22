@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using PirateJam.Controllers;
 using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
+    public PlayerController playerController;
+
     public Transform rotationPoint;
-    public Transform aim;
+    public Transform firePoint;
 
     public GameObject bullet;
     private Vector3 mousePos;
@@ -17,6 +20,7 @@ public class Attacking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerController = GetComponent<PlayerController>();
         myCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
@@ -41,7 +45,7 @@ public class Attacking : MonoBehaviour
         if (Input.GetMouseButton(0) && canFire)
         {
             canFire = false;
-            Instantiate(bullet, aim.position, Quaternion.identity);
+            Instantiate(bullet, firePoint.position, Quaternion.identity);
         }
     }
 

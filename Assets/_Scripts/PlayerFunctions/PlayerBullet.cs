@@ -9,14 +9,16 @@ public class PlayerBullet : MonoBehaviour
     private Vector3 mousePos;
     private Camera myCamera;
     private Rigidbody2D rb;
-    public float force;
+    private Damage damage;
 
+    public float force;
     private float timer = 0;
     public float timeToDestroy;
 
     // Start is called before the first frame update
     void Start()
     {
+        damage = GetComponent<Damage>();
         myCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = myCamera.ScreenToWorldPoint(Input.mousePosition);
