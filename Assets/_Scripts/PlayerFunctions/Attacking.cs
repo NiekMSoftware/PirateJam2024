@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
-    public PlayerController playerController;
-
     public Transform rotationPoint;
     public Transform firePoint;
 
@@ -20,7 +18,6 @@ public class Attacking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
         myCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
