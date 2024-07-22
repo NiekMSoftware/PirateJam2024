@@ -343,5 +343,6 @@ MonoBehaviour:
   inventory: {fileID: 0}
   equipmentPanel: {fileID: 0}
   statPanel: {fileID: 0}
+  craftingWindow: {fileID: 0}
   itemTooltip: {fileID: 0}
   draggableItem: {fileID: 0}
