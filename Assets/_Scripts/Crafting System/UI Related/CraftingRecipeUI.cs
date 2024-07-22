@@ -71,7 +71,7 @@ namespace PirateJam.Crafting_System.UI_Related
                 arrowParent.SetSiblingIndex(slotIndex);
                 slotIndex = SetSlots(craftingRecipe.Results, slotIndex);
 
-                for (int i = 0; i < itemSlots.Length; i++)
+                for (int i = slotIndex; i < itemSlots.Length; i++)
                 {
                     itemSlots[i].transform.parent.gameObject.SetActive(false);
                 }
