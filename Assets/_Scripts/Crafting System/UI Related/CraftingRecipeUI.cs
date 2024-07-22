@@ -95,6 +95,7 @@ namespace PirateJam.Crafting_System.UI_Related
                 itemSlot.Amount = itemAmount.Amount;
                 itemSlot.transform.parent.gameObject.SetActive(true);
             }
+            print(slotIndex);
             return slotIndex;
         }
     }

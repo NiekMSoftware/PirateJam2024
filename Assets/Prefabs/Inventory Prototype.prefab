@@ -9232,6 +9232,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 57722554022080283}
     - target: {fileID: 6564180723790244549, guid: 8a5af14dfe5fb6242b2f873ee5b51b77, type: 3}
+      propertyPath: recipeUIPrefab
+      value: 
+      objectReference: {fileID: 2885491119493366208, guid: b5b29f895a3805a488e9d3a6ca4d1d8e, type: 3}
+    - target: {fileID: 6564180723790244549, guid: 8a5af14dfe5fb6242b2f873ee5b51b77, type: 3}
       propertyPath: CraftingRecipes.Array.size
       value: 0
       objectReference: {fileID: 0}
