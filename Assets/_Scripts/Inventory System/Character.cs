@@ -18,7 +18,7 @@ namespace PirateJam.Inventory_System
         [SerializeField] private ItemTooltip itemTooltip;
         [SerializeField] private Image draggableItem;
 
-        private ItemSlot dragItemSlot;
+        private BaseItemSlot dragItemSlot;
 
         private void OnValidate()
         {
@@ -61,7 +61,7 @@ namespace PirateJam.Inventory_System
             equipmentPanel.OnDropEvent += Drop;
         }
 
-        private void Equip(ItemSlot itemSlot)
+        private void Equip(BaseItemSlot itemSlot)
         {
             EquipableItem equipableItem = itemSlot.Item as EquipableItem;
             if (equipableItem != null)
@@ -70,7 +70,7 @@ namespace PirateJam.Inventory_System
             }
         }
 
-        private void Unequip(ItemSlot itemSlot)
+        private void Unequip(BaseItemSlot itemSlot)
         {
             EquipableItem equipableItem = itemSlot.Item as EquipableItem;
             if (equipableItem != null)
@@ -79,7 +79,7 @@ namespace PirateJam.Inventory_System
             }
         }
 
-        private void ShowTooltip(ItemSlot itemSlot)
+        private void ShowTooltip(BaseItemSlot itemSlot)
         {
             EquipableItem equipableItem = itemSlot.Item as EquipableItem;
             if (equipableItem != null)
@@ -88,12 +88,12 @@ namespace PirateJam.Inventory_System
             }
         }
 
-        private void HideTooltip(ItemSlot itemSlot)
+        private void HideTooltip(BaseItemSlot itemSlot)
         {
             itemTooltip.HideToolTip();
         }
 
-        private void BeginDrag(ItemSlot itemSlot)
+        private void BeginDrag(BaseItemSlot itemSlot)
         {
             if (itemSlot.Item != null)
             {
@@ -104,19 +104,19 @@ namespace PirateJam.Inventory_System
             }
         }
 
-        private void EndDrag(ItemSlot itemSlot)
+        private void EndDrag(BaseItemSlot itemSlot)
         {
             dragItemSlot = null;
             draggableItem.enabled = false;
         }
 
-        private void Drag(ItemSlot itemSlot)
+        private void Drag(BaseItemSlot itemSlot)
         {
             if (draggableItem.enabled)
                 draggableItem.transform.position = Input.mousePosition;
         }
 
-        private void Drop(ItemSlot dropItemSlot)
+        private void Drop(BaseItemSlot dropItemSlot)
         {
             if (dropItemSlot == null) return;
 
