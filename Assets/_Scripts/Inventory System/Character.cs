@@ -124,32 +124,53 @@ namespace PirateJam.Inventory_System
         {
             if (dropItemSlot == null) return;
 
-            if (dropItemSlot.CanReceiveItem(dragItemSlot.Item) && dragItemSlot.CanReceiveItem(dropItemSlot.Item))
+            if (dropItemSlot.CanAddStack(dragItemSlot.Item))
             {
-                EquipableItem dragItem = dragItemSlot.Item as EquipableItem;
-                EquipableItem dropItem = dropItemSlot.Item as EquipableItem;
-
-                if (dragItemSlot is EquipmentSlot)
-                {
-                    if (dragItem != null) dragItem.Unequip(this);
-                    if (dropItem != null) dropItem.Equip(this);
-                }
-                if (dropItemSlot is EquipmentSlot)
-                {
-                    if (dragItem != null) dragItem.Equip(this);
-                    if (dropItem != null) dropItem.Unequip(this);
-                }
-                statPanel.UpdateStatValues();
-
-                Item draggedItem = dragItemSlot.Item;
-                int draggedItemAmount = dragItemSlot.Amount;
-
-                dragItemSlot.Item = dropItemSlot.Item;
-                dragItemSlot.Amount = dropItemSlot.Amount;
-
-                dropItemSlot.Item = draggedItem;
-                dropItemSlot.Amount = draggedItemAmount;
+                print("ADDING STACKS");
+                AddStacks(dropItemSlot);
             }
+            else if (dropItemSlot.CanReceiveItem(dragItemSlot.Item) && dragItemSlot.CanReceiveItem(dropItemSlot.Item))
+            {
+                SwapItems(dropItemSlot);
+            }
+        }
+
+        private void SwapItems(BaseItemSlot dropItemSlot)
+        {
+            EquipableItem dragItem = dragItemSlot.Item as EquipableItem;
+            EquipableItem dropItem = dropItemSlot.Item as EquipableItem;
+
+            if (dropItemSlot is EquipmentSlot)
+            {
+                if (dragItem != null) dragItem.Equip(this);
+                if (dropItem != null) dropItem.Unequip(this);
+            }
+
+            if (dragItemSlot is EquipmentSlot)
+            {
+                if (dragItem != null) dragItem.Unequip(this);
+                if (dropItem != null) dropItem.Equip(this);
+            }
+
+            statPanel.UpdateStatValues();
+
+            Item draggedItem = dragItemSlot.Item;
+            int draggedItemAmount = dragItemSlot.Amount;
+
+            dragItemSlot.Item = dropItemSlot.Item;
+            dragItemSlot.Amount = dropItemSlot.Amount;
+
+            dropItemSlot.Item = draggedItem;
+            dropItemSlot.Amount = draggedItemAmount;
+        }
+
+        private void AddStacks(BaseItemSlot dropItemSlot)
+        {
+            int numAddableStacks = dropItemSlot.Item.MaximumStacks - dropItemSlot.Amount;
+            int stacksToAdd = Mathf.Min(numAddableStacks, dragItemSlot.Amount);
+
+            dropItemSlot.Amount += stacksToAdd;
+            dragItemSlot.Amount -= stacksToAdd;
         }
 
         public void Equip(EquipableItem item)

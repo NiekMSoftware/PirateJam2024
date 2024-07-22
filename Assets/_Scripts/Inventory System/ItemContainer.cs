@@ -12,7 +12,7 @@ namespace PirateJam.Inventory_System
         {
             for (int i = 0; i < itemSlots.Length; i++)
             {
-                if (itemSlots[i].Item == null || (itemSlots[i].Item.ID == item.ID && itemSlots[i].Amount < item.MaximumStacks))
+                if (itemSlots[i].Item == null || itemSlots[i].CanAddStack(item))
                 {
                     itemSlots[i].Item = item;
                     itemSlots[i].Amount++;
@@ -30,12 +30,6 @@ namespace PirateJam.Inventory_System
                 if (itemSlots[i].Item == item)
                 {
                     itemSlots[i].Amount--;
-
-                    if (itemSlots[i].Amount == 0)
-                    {
-                        itemSlots[i].Item = null;
-                    }
-
                     return true;
                 }
             }

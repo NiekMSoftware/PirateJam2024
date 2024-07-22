@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 namespace PirateJam.Inventory_System.UI_Related
 {
@@ -45,9 +46,12 @@ namespace PirateJam.Inventory_System.UI_Related
             set
             {
                 _amount = value;
+                if (_amount < 0) _amount = 0;
+                if (_amount == 0) Item = null;
+
                 if (amountText != null)
                 {
-                    amountText.enabled = _item != null && _item.MaximumStacks > 1 && _amount > 0;
+                    amountText.enabled = _item != null && _amount > 0;
                     if (amountText.enabled)
                     {
                         amountText.text = _amount.ToString();
@@ -63,6 +67,11 @@ namespace PirateJam.Inventory_System.UI_Related
 
             if (amountText == null)
                 amountText = GetComponentInChildren<TMP_Text>();
+        }
+
+        public virtual bool CanAddStack(Item item, int amount = 1)
+        {
+            return Item != null && Item.ID == item.ID;
         }
 
         public virtual bool CanReceiveItem(Item item)
