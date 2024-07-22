@@ -1635,6 +1635,8 @@ GameObject:
   - component: {fileID: 2020853609}
   - component: {fileID: 2020853608}
   - component: {fileID: 2020853610}
+  - component: {fileID: 2020853612}
+  - component: {fileID: 2020853611}
   m_Layer: 0
   m_Name: Dungeon Walls
   m_TagString: Untagged
@@ -2203,11 +2205,131 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!66 &2020853611
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020853606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 2020853610}
+    m_ColliderPaths:
+    - - X: -10000000
+        Y: 40000000
+      - X: -40000000
+        Y: 40000000
+      - X: -40000000
+        Y: 90000000
+      - X: -70000000
+        Y: 90000000
+      - X: -70000000
+        Y: 40000000
+      - X: -100000000
+        Y: 40000000
+      - X: -100000000
+        Y: -10000000
+      - X: -10000000
+        Y: -10000000
+    - - X: -90000000
+        Y: 0
+      - X: -90000000
+        Y: 30000000
+      - X: -60000000
+        Y: 30000000
+      - X: -60000000
+        Y: 80000000
+      - X: -50000000
+        Y: 80000000
+      - X: -50000000
+        Y: 30000000
+      - X: -20000000
+        Y: 30000000
+      - X: -20000000
+        Y: 0
+  m_CompositePaths:
+    m_Paths:
+    - - {x: -1.0000293, y: -1}
+      - {x: -1.0000293, y: 4}
+      - {x: -4, y: 4.0000296}
+      - {x: -4.000029, y: 9}
+      - {x: -7, y: 8.99997}
+      - {x: -7.0000296, y: 4}
+      - {x: -10, y: 3.999971}
+      - {x: -9.99997, y: -1}
+    - - {x: -2, y: 0.0000294}
+      - {x: -9, y: 0.0000294}
+      - {x: -8.99997, y: 3}
+      - {x: -6, y: 3.0000293}
+      - {x: -5.9999704, y: 8}
+      - {x: -5, y: 7.9999704}
+      - {x: -4.999971, y: 3}
+      - {x: -2, y: 2.9999707}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 2020853606}
+--- !u!50 &2020853612
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020853606}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2065980680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2065980681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2359,6 +2481,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5343013595540469954, guid: b2cc753f908cdcc439c89601b485d367, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6851889987704181317, guid: b2cc753f908cdcc439c89601b485d367, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2386,11 +2512,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2935630852182641026, guid: b3b7ec2a4f778994cbd1cde868f32320, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2935630852182641026, guid: b3b7ec2a4f778994cbd1cde868f32320, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2935630852182641026, guid: b3b7ec2a4f778994cbd1cde868f32320, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2402,7 +2528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2935630852182641026, guid: b3b7ec2a4f778994cbd1cde868f32320, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -5.625
       objectReference: {fileID: 0}
     - target: {fileID: 2935630852182641026, guid: b3b7ec2a4f778994cbd1cde868f32320, type: 3}
       propertyPath: m_SizeDelta.y
