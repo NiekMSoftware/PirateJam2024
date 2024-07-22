@@ -40,6 +40,18 @@ namespace PirateJam.Crafting_System.UI_Related
 
         public void OnCraftButtonClick()
         {
+            if (craftingRecipe == null)
+            {
+                Debug.LogError("No crafting recipe");
+                return;
+            }
+
+            if (ItemContainer == null)
+            {
+                Debug.LogError("There is no item container.");
+                return;
+            }
+
             if (craftingRecipe != null && ItemContainer != null)
             {
                 if (craftingRecipe.CanCraft(ItemContainer))
@@ -57,7 +69,7 @@ namespace PirateJam.Crafting_System.UI_Related
                 {
                     Debug.LogError("You don't have the required materials!");
                 }
-            } 
+            }
         }
 
         private void SetCraftingRecipe(CraftingRecipe newCraftingRecipe)

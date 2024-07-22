@@ -75,8 +75,8 @@ namespace PirateJam.Inventory_System
             int number = 0;
 
             for (int i = 0; i < itemSlots.Length; i++)
-            {
-                if (itemSlots[i].Item.ID == itemID)
+            { 
+                if (itemSlots[i].Item != null && itemSlots[i].Item.ID == itemID)
                 {
                     number++;
                 }

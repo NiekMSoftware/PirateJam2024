@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace PirateJam.Inventory_System.UI_Related
 {
     public class EquipmentSlot : ItemSlot

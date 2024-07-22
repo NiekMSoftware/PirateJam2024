@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: Cooler ChickenLeg
   m_EditorClassIdentifier: 
   Materials:
-  - Item: {fileID: 11400000, guid: 45b3b250816f47649b915eed4ffe7c95, type: 2}
-    Amount: 0
   - Item: {fileID: 11400000, guid: a93976bb4dac45a4e84d26c75396dc4f, type: 2}
-    Amount: 0
+    Amount: 1
   Results:
   - Item: {fileID: 11400000, guid: 72d504728da25d64daf73fc07685c344, type: 2}
     Amount: 69
