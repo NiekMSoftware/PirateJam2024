@@ -12,6 +12,7 @@ namespace PirateJam.Inventory_System
         [Space]
         public Sprite Icon;
         public string ItemName;
+        public string ItemDescription;
 
         [Space]
         [Range(1, 100)]

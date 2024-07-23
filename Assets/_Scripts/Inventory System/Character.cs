@@ -86,9 +86,14 @@ namespace PirateJam.Inventory_System
         private void ShowTooltip(BaseItemSlot itemSlot)
         {
             EquipableItem equipableItem = itemSlot.Item as EquipableItem;
+            Item regularItem = itemSlot.Item as Item;
             if (equipableItem != null)
             {
                 itemTooltip.ShowToolTip(equipableItem);
+            }
+            else if (regularItem != null)
+            {
+                itemTooltip.ShowToolTip(regularItem);
             }
         }
 

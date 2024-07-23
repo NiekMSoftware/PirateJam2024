@@ -15,4 +15,5 @@ MonoBehaviour:
   id: a93976bb4dac45a4e84d26c75396dc4f
   Icon: {fileID: 2057780958, guid: a51b707fe08ee6b4386b6156bf4e40da, type: 3}
   ItemName: Gold Coin
+  ItemDescription: Shining gold coin, used for transactions.
   MaximumStacks: 69
