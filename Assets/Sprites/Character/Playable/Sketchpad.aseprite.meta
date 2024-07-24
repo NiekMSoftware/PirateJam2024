@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4006228aee0e824d84ffe040849b42f
+guid: 3fbb93d8dfd05794185d1030939a7ee1
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 500
       height: 500
-    spriteID: e342ab2a84e494d4cbcffbc5378692b1
+    spriteID: 5d60489683e4e89419fa1c100bd28e13
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 512
       width: 500
       height: 500
-    spriteID: fe71e058fa865fb43aac7e8d7b03ea87
+    spriteID: da4f707693cb8a040995476341a060e0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 1020
       width: 500
       height: 500
-    spriteID: d033e8db4018d684f9b95635a0997da2
+    spriteID: 7e69690bf59e26944afedfcd1848ca39
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 1528
       width: 500
       height: 500
-    spriteID: aa04cd02bde93b24d8dccbfccb748b7e
+    spriteID: 7128eed60cf753444bee098447b65423
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +212,7 @@ ScriptedImporter:
       y: 4
       width: 500
       height: 500
-    spriteID: 1982bc9e9f30818479d1665fd13c523a
+    spriteID: 311cd85621d948e4092ddb9a30887971
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -238,7 +238,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 500
-      spriteId: e342ab2a84e494d4cbcffbc5378692b1
+      spriteId: 5d60489683e4e89419fa1c100bd28e13
     - name: Sketchpad_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -247,7 +247,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 500
-      spriteId: fe71e058fa865fb43aac7e8d7b03ea87
+      spriteId: da4f707693cb8a040995476341a060e0
     - name: Sketchpad_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -256,7 +256,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 500
-      spriteId: d033e8db4018d684f9b95635a0997da2
+      spriteId: 7e69690bf59e26944afedfcd1848ca39
     - name: Sketchpad_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -265,7 +265,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 500
-      spriteId: aa04cd02bde93b24d8dccbfccb748b7e
+      spriteId: 7128eed60cf753444bee098447b65423
     - name: Sketchpad_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
@@ -274,7 +274,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 500
-      spriteId: 1982bc9e9f30818479d1665fd13c523a
+      spriteId: 311cd85621d948e4092ddb9a30887971
     linkedCells: []
     parentIndex: -1
   platformSettings: []
