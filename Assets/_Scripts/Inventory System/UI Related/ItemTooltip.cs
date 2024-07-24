@@ -32,6 +32,12 @@ namespace PirateJam.Inventory_System.UI_Related
 
             gameObject.SetActive(true);
         }
+
+        public void ShowToolTip(Item item)
+        {
+            ItemNameText.text = item.ItemName;
+            ItemStatsText.text = item.ItemDescription;
+        }
         
         public void HideToolTip()
         { 
