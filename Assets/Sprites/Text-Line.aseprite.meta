@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d9ed068349119143a4b98b88048ab16
+guid: 791b84ecb4df8a64d8e4e28c2c4f2f36
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -120,20 +120,49 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  animatedSpriteImportData: []
+  animatedSpriteImportData:
+  - name: Text-Line
+    originalName: 
+    pivot: {x: 0.5, y: -3}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 16
+      height: 1
+    spriteID: fc9d06a54afb3d648b78c051c3e14fa3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -828126536
-    name: EnvironmentSketchpad
+    guid: 7510206
+    name: Text-Line
     layerFlags: 0
     layerType: 0
     blendMode: 0
-    cells: []
+    cells:
+    - name: Text-Line
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 3
+        width: 16
+        height: 1
+      spriteId: fc9d06a54afb3d648b78c051c3e14fa3
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 600, y: 600}
+  canvasSize: {x: 16, y: 16}
