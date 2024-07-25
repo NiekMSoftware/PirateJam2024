@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 8ccf0ec0371343946ac743ee036e9bbe
-=======
-<<<<<<<< HEAD:Assets/Sprites/Environment/EnvironmentSketchpad.aseprite.meta
-guid: 9d9ed068349119143a4b98b88048ab16
-========
-guid: e65c7137890abb14785c285870d4182d
->>>>>>>> origin/feature/crafting:Assets/Sprites/Character/Monster/Slime.aseprite.meta
->>>>>>> origin/feature/crafting
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -80,15 +72,7 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 1
-<<<<<<< HEAD
     importHiddenLayers: 0
-=======
-<<<<<<<< HEAD:Assets/Sprites/Environment/EnvironmentSketchpad.aseprite.meta
-    importHiddenLayers: 0
-========
-    importHiddenLayers: 1
->>>>>>>> origin/feature/crafting:Assets/Sprites/Character/Monster/Slime.aseprite.meta
->>>>>>> origin/feature/crafting
     layerImportMode: 1
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
@@ -101,15 +85,7 @@ ScriptedImporter:
     addShadowCasters: 0
   asepriteImporterSettings:
     fileImportMode: 1
-<<<<<<< HEAD
     importHiddenLayers: 0
-=======
-<<<<<<<< HEAD:Assets/Sprites/Environment/EnvironmentSketchpad.aseprite.meta
-    importHiddenLayers: 0
-========
-    importHiddenLayers: 1
->>>>>>>> origin/feature/crafting:Assets/Sprites/Character/Monster/Slime.aseprite.meta
->>>>>>> origin/feature/crafting
     layerImportMode: 1
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
@@ -121,15 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-<<<<<<< HEAD
   platformSettingsDirtyTick: 0
-=======
-<<<<<<<< HEAD:Assets/Sprites/Environment/EnvironmentSketchpad.aseprite.meta
-  platformSettingsDirtyTick: 0
-========
-  platformSettingsDirtyTick: 638572744984812467
->>>>>>>> origin/feature/crafting:Assets/Sprites/Character/Monster/Slime.aseprite.meta
->>>>>>> origin/feature/crafting
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -152,7 +120,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-<<<<<<< HEAD
   animatedSpriteImportData:
   - name: Slime_Frame_0
     originalName: 
@@ -165,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 9
-    spriteID: bec757ac01ca2b34080bb81f2c54e217
+    spriteID: 10464791cebe74b4a818b91ffc0ee8b6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -185,7 +152,7 @@ ScriptedImporter:
       y: 21
       width: 16
       height: 9
-    spriteID: a6aee798659563244a4a02749005b6dd
+    spriteID: 44a07fb3bab26d247b71d3a78af0ca0e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -211,7 +178,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 9
-      spriteId: bec757ac01ca2b34080bb81f2c54e217
+      spriteId: 10464791cebe74b4a818b91ffc0ee8b6
     - name: Slime_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -220,36 +187,11 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 9
-      spriteId: a6aee798659563244a4a02749005b6dd
-=======
-  animatedSpriteImportData: []
-  spriteSheetImportData: []
-  asepriteLayers:
-  - layerIndex: 0
-<<<<<<<< HEAD:Assets/Sprites/Environment/EnvironmentSketchpad.aseprite.meta
-    guid: -828126536
-    name: EnvironmentSketchpad
-========
-    guid: -1324298474
-    name: Slime
->>>>>>>> origin/feature/crafting:Assets/Sprites/Character/Monster/Slime.aseprite.meta
-    layerFlags: 0
-    layerType: 0
-    blendMode: 0
-    cells: []
->>>>>>> origin/feature/crafting
+      spriteId: 44a07fb3bab26d247b71d3a78af0ca0e
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-<<<<<<< HEAD
   canvasSize: {x: 16, y: 16}
-=======
-<<<<<<<< HEAD:Assets/Sprites/Environment/EnvironmentSketchpad.aseprite.meta
-  canvasSize: {x: 600, y: 600}
-========
-  canvasSize: {x: 16, y: 16}
->>>>>>>> origin/feature/crafting:Assets/Sprites/Character/Monster/Slime.aseprite.meta
->>>>>>> origin/feature/crafting

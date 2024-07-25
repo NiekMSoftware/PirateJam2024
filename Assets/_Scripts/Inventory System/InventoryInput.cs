@@ -38,12 +38,8 @@ namespace PirateJam.Inventory_System
                     if (!characterPanelGameObject.activeSelf)
                     {
                         characterPanelGameObject.SetActive(true);
-                        equipmentPanelGameObject.SetActive(false);
+                        equipmentPanelGameObject.SetActive(true);
                         ShowMouseCursor();
-                    }
-                    else if (equipmentPanelGameObject.activeSelf) 
-                    { 
-                        equipmentPanelGameObject.SetActive(false);
                     }
                     else
                     {
